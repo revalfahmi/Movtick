@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.movtick.HomeActivity
+import com.example.movtick.home.HomeActivity
 import com.example.movtick.R
 import com.example.movtick.model.User
 import com.example.movtick.sign.signup.SignUpActivity

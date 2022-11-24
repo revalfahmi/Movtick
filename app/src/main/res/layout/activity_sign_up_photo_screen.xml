@@ -8,7 +8,7 @@
     tools:context=".sign.signup.SignUpPhotoScreenActivity">
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/iv_back"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="24dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tv_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -47,17 +47,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/iv_profile"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="67dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
         app:srcCompat="@drawable/user_pic" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_upload_later"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -73,7 +73,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -85,7 +85,16 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btn_upload_later"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_add_photo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/shape_rounded_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+        app:layout_constraintEnd_toEndOf="@+id/iv_profile"
+        app:srcCompat="@drawable/ic_btn_upload" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.example.movtick.HomeActivity
+import com.example.movtick.home.HomeActivity
 import com.example.movtick.R
 import com.example.movtick.sign.signin.SignInActivity
 import com.example.movtick.utils.Preferences
