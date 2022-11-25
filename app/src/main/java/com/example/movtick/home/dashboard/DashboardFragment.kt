@@ -1,19 +1,22 @@
-package com.example.movtick.home
+package com.example.movtick.home.dashboard
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.movtick.R
+import com.example.movtick.model.Film
 import com.example.movtick.utils.Preferences
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -26,6 +29,8 @@ class DashboardFragment : Fragment() {
 
     private lateinit var preferences: Preferences
     private lateinit var mDatabase: DatabaseReference
+
+    private var dataList = ArrayList<Film>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,11 +64,36 @@ class DashboardFragment : Fragment() {
             .apply(RequestOptions.circleCropTransform())
             .into(ivProfile)
 
-//        getData()
+        rvNowPlaying.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        rvComingSoon.layoutManager = LinearLayoutManager(context)
+
+        getData()
     }
 
     private fun getData(){
+        mDatabase.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                dataList.clear()
+                for (getDataSnapshot in snapshot.children){
+                    val film = getDataSnapshot.getValue(Film::class.java)
+                    dataList.add(film!!)
+                }
 
+
+                rvNowPlaying.adapter = NowPlayingAdapter(dataList){
+
+                }
+
+//                rvComingSoon.adapter = ComingSoonAdapter(dataList){
+//
+//                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(context, ""+error.message, Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 
     private fun currencyFormat(balance: Double, textView: TextView){
