@@ -76,6 +76,11 @@ class ChooseSeatActivity : AppCompatActivity() {
                 dataList.add(data)
             }
         }
+
+        btnChooseSeat.setOnClickListener {
+            val intent = Intent(this@ChooseSeatActivity, ChooseSeatActivity::class.java).putExtra("data", dataList)
+            startActivity(intent)
+        }
     }
 
     private fun buyTicket(total: Int) {
