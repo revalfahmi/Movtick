@@ -1,13 +1,16 @@
 package com.example.movtick
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.movtick.chooseseat.ChooseSeatActivity
 import com.example.movtick.model.Film
 import com.example.movtick.model.Play
 import com.google.firebase.database.*
@@ -19,6 +22,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var tvRating: TextView
     private lateinit var tvDesc: TextView
     private lateinit var rvActors: RecyclerView
+    private lateinit var btnChooseSeat: Button
 
     lateinit var mDatabase: DatabaseReference
     var dataList = ArrayList<Play>()
@@ -33,6 +37,7 @@ class DetailActivity : AppCompatActivity() {
         tvRating = findViewById(R.id.tv_rate)
         tvDesc = findViewById(R.id.tv_description)
         rvActors = findViewById(R.id.rv_actor)
+        btnChooseSeat = findViewById(R.id.btn_choose_seat)
 
         // ambil data yang dikirim dari dashboard
         val data = intent.getParcelableExtra<Film>("data")
@@ -54,6 +59,11 @@ class DetailActivity : AppCompatActivity() {
             rvActors.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
             getData()
+        }
+
+        btnChooseSeat.setOnClickListener {
+            val intent = Intent(this@DetailActivity, ChooseSeatActivity::class.java)
+            startActivity(intent)
         }
     }
 
