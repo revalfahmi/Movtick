@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.movtick.chooseseat.ChooseSeatActivity
+import com.example.movtick.checkout.ChooseSeatActivity
 import com.example.movtick.model.Film
 import com.example.movtick.model.Play
 import com.google.firebase.database.*
@@ -59,11 +59,11 @@ class DetailActivity : AppCompatActivity() {
             rvActors.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
             getData()
-        }
 
-        btnChooseSeat.setOnClickListener {
-            val intent = Intent(this@DetailActivity, ChooseSeatActivity::class.java)
-            startActivity(intent)
+            btnChooseSeat.setOnClickListener {
+                val intent = Intent(this@DetailActivity, ChooseSeatActivity::class.java).putExtra("data", data)
+                startActivity(intent)
+            }
         }
     }
 
