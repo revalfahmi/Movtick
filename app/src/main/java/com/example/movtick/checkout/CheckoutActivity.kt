@@ -1,5 +1,6 @@
 package com.example.movtick.checkout
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -7,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movtick.R
+import com.example.movtick.SuccessActivity
 import com.example.movtick.model.Checkout
 import com.example.movtick.utils.Preferences
 
@@ -45,6 +47,16 @@ class CheckoutActivity : AppCompatActivity() {
         rvItems.layoutManager = LinearLayoutManager(this)
         rvItems.adapter = CheckoutAdapter(dataList){
 
+        }
+
+        btnPayNow.setOnClickListener {
+            val intent = Intent(this@CheckoutActivity, SuccessActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnCancel.setOnClickListener {
+            val intent = Intent(this@CheckoutActivity, ChooseSeatActivity::class.java)
+            startActivity(intent)
         }
 
     }

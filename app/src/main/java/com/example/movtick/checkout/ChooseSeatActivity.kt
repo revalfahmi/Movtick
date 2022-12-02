@@ -78,7 +78,7 @@ class ChooseSeatActivity : AppCompatActivity() {
         }
 
         btnChooseSeat.setOnClickListener {
-            val intent = Intent(this@ChooseSeatActivity, ChooseSeatActivity::class.java).putExtra("data", dataList)
+            val intent = Intent(this@ChooseSeatActivity, CheckoutActivity::class.java).putExtra("data", dataList)
             startActivity(intent)
         }
     }
