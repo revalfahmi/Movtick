@@ -11,6 +11,7 @@
     <!--  Tambahan warna aplikasi  -->
     <color name="blueColor">#14153D</color>
     <color name="blueGreyColor">#292A50</color>
+    <color name="lineColor">#42436D</color>
     <color name="redColor">#FF2667</color>
     <color name="lightBlueColor">#98C5EB</color>
     <color name="greenColor">#1ABC9C</color>

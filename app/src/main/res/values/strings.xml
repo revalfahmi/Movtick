@@ -48,6 +48,12 @@
     <string name="today">Todays</string>
     <string name="scan_qr">Scan QR</string>
     <string name="quick_print">Quick Print</string>
+    <string name="setting">Settings</string>
+    <string name="keep_it_up">Keep it up to date</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_language">Change Language</string>
+    <string name="help">Help</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
