@@ -6,6 +6,7 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.example.movtick.R
 import com.example.movtick.home.dashboard.DashboardFragment
+import com.example.movtick.home.ticket.TicketFragment
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var btnDashboard: ImageView
